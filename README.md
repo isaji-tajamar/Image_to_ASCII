@@ -60,7 +60,7 @@ pip install -r requirements.txt
 Ejecuta la aplicación Streamlit desde la carpeta del proyecto:
 
 ```bash
-streamlit run streamlit_app.py
+streamlit run ui_streamlit.py
 ```
 
 Luego abre la URL que aparece en consola (normalmente [http://localhost:8501](http://localhost:8501))
