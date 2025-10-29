@@ -63,8 +63,7 @@ Ejecuta la aplicación Streamlit desde la carpeta del proyecto:
 streamlit run streamlit_app.py
 ```
 
-Luego abre la URL que aparece en consola (normalmente  
-👉 [http://localhost:8501](http://localhost:8501))
+Luego abre la URL que aparece en consola (normalmente [http://localhost:8501](http://localhost:8501))
 
 > 💡 En WSL, abre la URL en tu navegador de Windows.
 
