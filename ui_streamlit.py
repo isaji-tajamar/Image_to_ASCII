@@ -14,8 +14,8 @@ st.title("Image → ASCII Art")
 
 with st.sidebar:
     uploaded = st.file_uploader("Sube una imagen", type=["png", "jpg", "jpeg"])
-    width = st.slider("Ancho (cols)", 60, 250, 120, 2)
-    aspect = st.slider("Corrección de aspecto", 0.2, 0.6, 0.5, 0.05)
+    width = st.slider("Ancho (cols)", 10, 180, 60, 2)
+    aspect = st.slider("Corrección de aspecto", 0.2, 0.6, 0.5, 0.01)
     gamma = st.slider("Gamma", 0.8, 3.0, 1.0, 0.1)
     blur = st.slider("Suavizado", 0.0, 1.0, 0.5, 0.05)
     invert = st.checkbox("Invertir rampa", value=False)
