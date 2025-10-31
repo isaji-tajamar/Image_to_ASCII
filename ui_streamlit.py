@@ -13,15 +13,22 @@ st.set_page_config(layout="wide")
 st.title("Image → ASCII Art")
 
 with st.sidebar:
-	uploaded = st.file_uploader("Sube una imagen", type=["png", "jpg", "jpeg"])
-	width = st.slider("Ancho (cols)", 60, 250, 120, 2)
-	aspect = st.slider("Corrección de aspecto", 0.2, 0.6, 0.5, 0.05)
-	gamma = st.slider("Gamma", 0.8, 3.0, 1.0, 0.1)
-	blur = st.slider("Suavizado", 0.0, 1.0, 0.5, 0.05)
-	invert = st.checkbox("Invertir rampa", value=False)
-	block_size = st.slider("Tamaño del bloque de muestreo", 1, 8, 4)
-	preset = st.selectbox("Preset", ["classic", "detailed", "blocks"])
-	ramp = presets[preset]
+    uploaded = st.file_uploader("Sube una imagen", type=["png", "jpg", "jpeg"])
+    width = st.slider("Ancho (cols)", 60, 250, 120, 2)
+    aspect = st.slider("Corrección de aspecto", 0.2, 0.6, 0.5, 0.05)
+    gamma = st.slider("Gamma", 0.8, 3.0, 1.0, 0.1)
+    blur = st.slider("Suavizado", 0.0, 1.0, 0.5, 0.05)
+    invert = st.checkbox("Invertir rampa", value=False)
+    block_size = st.slider("Tamaño del bloque de muestreo", 1, 8, 4)
+    preset = st.selectbox("Preset", ["classic", "detailed", "blocks"])
+    ramp = presets[preset]
+    custom_ramp = st.checkbox("Usar rampa personalizada", value=False)
+    if custom_ramp:
+        ramp = st.text_input(
+            "Rampa personalizada (oscuro → claro)",
+            value=ramp,
+            help="Ejemplo: @#%*+=-:.  (primer char = más oscuro)"
+        )
 
 if uploaded:
     img = preprocess(uploaded, max_size=800, blur=blur)
